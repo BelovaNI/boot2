@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <style>
+    body {background-color: green;}
+    h1   {color: white;
+      font-family: verdana;
+      font-size: 500%;
+      text-align: center;}
+    form    {color: red;
+      font-family: courier;
+      font-size: 300%;
+      text-align: center;}
+  </style>
+</head>
+<body>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+  <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>
